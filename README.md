@@ -45,7 +45,7 @@ a couple of formats are accepted:
 {0, 16, 32, 32}
 ```
 
-Multipliers are meant to create a sequencial list of sprites, based in a a sprite definition explained above.
+Multipliers are meant to create a sequential list of sprites, based in a a sprite definition explained above.
 
 So, to generate a horizontal list of 2 sprites, the following example can be used:
 
