@@ -1,0 +1,23 @@
+name: example
+description: SpritExp example
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  file_selector: ^1.0.0
+  flame: ^1.8.2
+  flutter:
+    sdk: flutter
+  nes_ui: ^0.7.0
+  spritexp:
+    path: ../
+
+dev_dependencies:
+  very_good_analysis: ^5.0.0
+
+flutter:
+  uses-material-design: true
