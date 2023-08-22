@@ -6,7 +6,7 @@
 
 Kinda like a regular expression language, but for Sprites
 
-[](./banner.png)
+![](./banner.png)
 
 ## Installation 💻
 
