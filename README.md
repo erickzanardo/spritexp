@@ -64,6 +64,12 @@ On the other hand, the following:
 Will generate two sprites, the first starting at X0 Y0, with a square dimension of 16, and
 the second at X0 Y16, also with the same dimension.
 
+You can also get a grid of sprites by adding both `x` and `y` to the expression:
+
+```
+{0, 16} * 2xy
+```
+
 By default, SpritExp assumes that multipliers are horizontal, so the `x` can be omitted, meaning
 that `{0, 16} * 2` and `{0, 16} * 2x` are the same expression.
 

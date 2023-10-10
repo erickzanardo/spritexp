@@ -110,6 +110,24 @@ void main() {
           );
         },
       );
+
+      test(
+        'correctly parse when only have size and is both vertical and '
+        'horizontal',
+        () {
+          expect(
+            SpritExp(expression: '{10} * 2xy').rects,
+            equals(
+              [
+                Rect.fromLTWH(0, 0, 10, 10),
+                Rect.fromLTWH(10, 0, 10, 10),
+                Rect.fromLTWH(0, 10, 10, 10),
+                Rect.fromLTWH(10, 10, 10, 10),
+              ],
+            ),
+          );
+        },
+      );
     });
 
     group('/ by image', () {

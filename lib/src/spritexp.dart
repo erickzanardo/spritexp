@@ -19,7 +19,7 @@ class SpritExp {
 
   void _calcValues() {
     final regExp = RegExp(
-      r'{([0-9]+)[,]?([0-9]+)?[,]?([0-9]+)?[,]?([0-9]+)?}(\*[0-9]+[xy]?)?',
+      r'{([0-9]+)[,]?([0-9]+)?[,]?([0-9]+)?[,]?([0-9]+)?}(\*[0-9]+([xy]+)?)?',
     );
 
     final matches = regExp.firstMatch(
@@ -61,7 +61,7 @@ class SpritExp {
 
       if (matches.group(5) != null) {
         final multiplerRegExp = RegExp(
-          '([0-9]+)([xy])?',
+          '([0-9]+)([xy]+)?',
         );
 
         final multiplerExpression = matches.group(5)!.replaceAll('*', '');
@@ -70,23 +70,37 @@ class SpritExp {
         );
 
         final value = double.parse(multiplerMatches!.group(1)!);
-        final vertical = multiplerMatches.group(2) == 'y';
+        final group = multiplerMatches.group(2);
+        final vertical = group?.contains('y') ?? false;
+        final horizontal = group?.contains('x') ?? true;
 
-        if (vertical) {
-          for (var i = 1; i < value; i++) {
-            _rects.add(
-              firstRect.translate(
-                0,
-                firstRect.height * i,
-              ),
-            );
+        if (horizontal && vertical) {
+          for (var y = 0; y < value; y++) {
+            for (var x = 0; x < value; x++) {
+              if (y == 0 && x == 0) continue;
+              _rects.add(
+                firstRect.translate(
+                  firstRect.width * x,
+                  firstRect.height * y,
+                ),
+              );
+            }
           }
-        } else {
+        } else if (horizontal) {
           for (var i = 1; i < value; i++) {
             _rects.add(
               firstRect.translate(
                 firstRect.width * i,
                 0,
+              ),
+            );
+          }
+        } else if (vertical) {
+          for (var i = 1; i < value; i++) {
+            _rects.add(
+              firstRect.translate(
+                0,
+                firstRect.height * i,
               ),
             );
           }
