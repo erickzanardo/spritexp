@@ -73,6 +73,10 @@ You can also get a grid of sprites by adding both `x` and `y` to the expression:
 By default, SpritExp assumes that multipliers are horizontal, so the `x` can be omitted, meaning
 that `{0, 16} * 2` and `{0, 16} * 2x` are the same expression.
 
+## Online editor
+
+A simple online editor where you can test expressions is available at: https://erickzanardo.github.io/spritexp/
+
 ---
 [flutter_install_link]: https://docs.flutter.dev/get-started/install
 [github_actions_link]: https://docs.github.com/en/actions/learn-github-actions
