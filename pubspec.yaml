@@ -1,6 +1,6 @@
 name: spritexp
 description: Kinda like a regular expression language, but for Sprites.
-version: 0.1.0
+version: 0.2.0
 repository: https://github.com/erickzanardo/spritexp
 
 environment:
